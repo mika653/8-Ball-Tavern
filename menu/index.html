@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu — 8 Ball Tavern | Kalibo, Aklan</title>
+<meta name="description" content="Full food menu at 8 Ball Tavern — appetizers, burgers, mains, pasta, pizza and more. Sports Lounge, Bar & Restaurant in Kalibo, Aklan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET & VARIABLES ─── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --black: #0d0d0d;
+  --dark: #141414;
+  --dark-surface: #1a1a1a;
+  --dark-elevated: #222222;
+  --gold: #c4935a;
+  --gold-light: #d4a563;
+  --gold-bright: #e8c07a;
+  --gold-dim: #8a6838;
+  --cream: #f0e6d3;
+  --cream-soft: #d4c9b8;
+  --white: #faf6f0;
+  --text-muted: #8a8278;
+  --border: rgba(196, 147, 90, 0.15);
+  --border-strong: rgba(196, 147, 90, 0.3);
+  --font-display: 'Cinzel Decorative', 'Georgia', serif;
+  --font-heading: 'Cinzel', 'Georgia', serif;
+  --font-accent: 'Cormorant Garamond', 'Georgia', serif;
+  --font-body: 'Outfit', 'Helvetica Neue', sans-serif;
+}
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-body);
+  background: var(--black);
+  color: var(--cream);
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+/* ─── NOISE TEXTURE OVERLAY ─── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px;
+}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* ─── ORNAMENTAL DIVIDER ─── */
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 4px;
+  opacity: 0.6;
+}
+.ornament::before, .ornament::after {
+  content: '';
+  height: 1px;
+  width: 40px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.ornament-diamond { font-size: 6px; }
+
+/* ─── NAVIGATION ─── */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0 20px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background: rgba(13, 13, 13, 0.92);
+  backdrop-filter: blur(20px) saturate(1.2);
+  -webkit-backdrop-filter: blur(20px) saturate(1.2);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.4);
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.nav-logo span { color: var(--cream); }
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  z-index: 1001;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--gold);
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+.nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(4.5px, 4.5px); }
+.nav-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
+
+.nav-menu {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 13, 13, 0.97);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transform: translateY(-100%);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 999;
+}
+.nav-menu.open { transform: translateY(0); }
+.nav-menu a {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--cream-soft);
+  padding: 12px 24px;
+  transition: color 0.3s ease;
+  position: relative;
+}
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 30px;
+  height: 1px;
+  background: var(--gold);
+  transition: transform 0.3s ease;
+}
+.nav-menu a:hover { color: var(--gold); }
+.nav-menu a:hover::after { transform: translateX(-50%) scaleX(1); }
+
+/* Desktop nav */
+.nav-links {
+  display: none;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: var(--font-heading);
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--cream-soft);
+  transition: color 0.3s ease;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-links a:hover::after { transform: scaleX(1); }
+
+@media (min-width: 768px) {
+  .nav-links { display: flex; }
+  .nav-toggle { display: none; }
+}
+
+/* ─── SECTION COMMONS ─── */
+section { padding: 80px 20px; position: relative; }
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 5vw, 36px);
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 8px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+.section-subtitle {
+  font-family: var(--font-accent);
+  font-size: 16px;
+  color: var(--text-muted);
+  text-align: center;
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.container { max-width: 1100px; margin: 0 auto; }
+
+/* ═══════════════════════════════════════════
+   MENU BOOK
+   ═══════════════════════════════════════════ */
+.menu-section {
+  background: var(--black);
+  overflow: hidden;
+  padding-top: 100px;
+}
+
+/* Book container */
+.book-wrap {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  perspective: 2000px;
+}
+
+/* The open book */
+.book-inner {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  display: flex;
+  background: transparent;
+}
+
+/* Each page */
+.book-page {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, #1e1c19 0%, #1a1815 40%, #171613 100%);
+  border: 1px solid rgba(196,147,90,0.12);
+  padding: 32px 24px 80px;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transform: rotateY(-12deg) scale(0.96);
+  transform-origin: left center;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-dim) transparent;
+}
+.book-page::-webkit-scrollbar { width: 4px; }
+.book-page::-webkit-scrollbar-track { background: transparent; }
+.book-page::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 2px; }
+
+.book-page.active {
+  opacity: 1;
+  visibility: visible;
+  transform: rotateY(0) scale(1);
+  z-index: 2;
+}
+.book-page.exit-left {
+  opacity: 0;
+  transform: rotateY(30deg) scale(0.95);
+  transform-origin: left center;
+}
+.book-page.exit-right {
+  opacity: 0;
+  transform: rotateY(-30deg) scale(0.95);
+  transform-origin: right center;
+}
+
+/* Page leather texture corners */
+.book-page::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  border: 1px solid rgba(196,147,90,0.06);
+  pointer-events: none;
+}
+/* Gold corner ornaments */
+.book-page::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 20px;
+  height: 20px;
+  border-top: 1px solid rgba(196,147,90,0.2);
+  border-left: 1px solid rgba(196,147,90,0.2);
+  pointer-events: none;
+}
+
+.page-corner-br {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  border-bottom: 1px solid rgba(196,147,90,0.2);
+  border-right: 1px solid rgba(196,147,90,0.2);
+  pointer-events: none;
+}
+.page-corner-tr {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  border-top: 1px solid rgba(196,147,90,0.2);
+  border-right: 1px solid rgba(196,147,90,0.2);
+  pointer-events: none;
+}
+.page-corner-bl {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  width: 20px;
+  height: 20px;
+  border-bottom: 1px solid rgba(196,147,90,0.2);
+  border-left: 1px solid rgba(196,147,90,0.2);
+  pointer-events: none;
+}
+
+/* Spine shadow */
+.book-spine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 30px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, rgba(0,0,0,0.3) 0%, transparent 30%, transparent 70%, rgba(0,0,0,0.3) 100%);
+  z-index: 3;
+  pointer-events: none;
+  display: none;
+}
+
+/* Page category header */
+.page-header {
+  text-align: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.page-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 30%;
+  right: 30%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+}
+.page-category {
+  font-family: var(--font-accent);
+  font-size: clamp(32px, 6vw, 42px);
+  color: var(--gold);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 2px;
+  line-height: 1.2;
+}
+.page-category-sub {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 6px;
+  font-weight: 300;
+}
+
+/* Menu items in book */
+.book-items { display: flex; flex-direction: column; gap: 1px; }
+.book-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(196,147,90,0.05);
+  gap: 8px;
+}
+.book-item-info { flex: 1; min-width: 0; }
+.book-item-name {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--cream);
+  font-weight: 500;
+}
+.book-item-desc {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 300;
+  margin-top: 1px;
+  line-height: 1.4;
+}
+.book-item-price {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  color: var(--gold);
+  white-space: nowrap;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+/* Dual prices (burgers) */
+.book-item-prices {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.book-item-prices .bp-col { text-align: center; }
+.book-item-prices .bp-label {
+  font-size: 7px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 1px;
+}
+.book-item-prices .bp-val {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.book-note {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 12px;
+  font-weight: 300;
+}
+
+/* Subsection within page */
+.book-subsection {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.book-subsection-title {
+  font-family: var(--font-accent);
+  font-size: 20px;
+  color: var(--gold-light);
+  margin-bottom: 6px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Sides grid in book */
+.book-sides-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 16px;
+}
+.book-sides-grid .book-item { padding: 8px 0; }
+.book-sides-grid .book-item-name { font-size: 11px; }
+
+/* ─── BOOK NAVIGATION ─── */
+.book-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+.book-nav-btn {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--gold);
+  transition: all 0.3s ease;
+  background: rgba(196,147,90,0.04);
+  flex-shrink: 0;
+}
+.book-nav-btn:hover:not(:disabled) {
+  background: rgba(196,147,90,0.12);
+  border-color: var(--gold);
+}
+.book-nav-btn:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+.book-page-dots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.book-dot {
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--gold-dim);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: transparent;
+  padding: 0;
+}
+.book-dot.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  transform: scale(1.15);
+}
+.book-dot:hover:not(.active) {
+  border-color: var(--gold);
+}
+
+.book-page-label {
+  font-family: var(--font-heading);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 12px;
+}
+
+/* Swipe hint */
+.book-swipe-hint {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 300;
+  letter-spacing: 1px;
+  opacity: 0.6;
+  animation: hintPulse 2s ease infinite;
+}
+@keyframes hintPulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 0.3; }
+}
+
+@media (min-width: 768px) {
+  .book-page { padding: 40px 48px 80px; }
+  .book-item-name { font-size: 13px; }
+  .book-sides-grid { grid-template-columns: repeat(3, 1fr); }
+  .book-spine { display: block; }
+  .book-inner { min-height: 600px; }
+}
+
+/* ─── FOOTER ─── */
+.footer {
+  background: var(--dark);
+  border-top: 1px solid var(--border);
+  padding: 48px 20px 32px;
+  text-align: center;
+}
+.footer-logo {
+  width: 120px;
+  margin: 0 auto 16px;
+  opacity: 0.6;
+}
+.footer-tagline {
+  font-family: var(--font-heading);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 24px;
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.footer-links a {
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+.footer-links a:hover { color: var(--gold); }
+.footer-bottom {
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.footer-copy {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.footer-est {
+  font-family: var(--font-heading);
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--gold-dim);
+  margin-top: 6px;
+}
+
+/* ─── SCROLL REVEAL ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ─── BACK TO TOP ─── */
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  background: rgba(196,147,90,0.15);
+  border: 1px solid var(--gold-dim);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--gold);
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.back-to-top.visible { opacity: 1; pointer-events: auto; }
+.back-to-top:hover { background: rgba(196,147,90,0.25); }
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav">
+  <a href="../" class="nav-logo">8 Ball <span>Tavern</span></a>
+  <ul class="nav-links">
+    <li><a href="../">Home</a></li>
+    <li><a href="#">Menu</a></li>
+    <li><a href="../#reserve">Reserve</a></li>
+    <li><a href="../#visit">Visit</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile menu overlay -->
+<div class="nav-menu" id="navMenu">
+  <a href="../" onclick="closeMenu()">Home</a>
+  <a href="#" onclick="closeMenu()">Menu</a>
+  <a href="../#reserve" onclick="closeMenu()">Reserve</a>
+  <a href="../#visit" onclick="closeMenu()">Visit</a>
+</div>
+
+<!-- ═══ MENU SECTION ═══ -->
+<section class="menu-section" id="menu">
+  <div class="container">
+    <div class="reveal">
+      <h2 class="section-title">Our Menu</h2>
+      <p class="section-subtitle">Crafted with passion, served with pride</p>
+      <div class="ornament"><span class="ornament-diamond">&#9830;</span></div>
+    </div>
+
+    <div class="book-wrap reveal">
+      <div class="book" id="menuBook">
+        <div class="book-inner">
+
+          <!-- PAGE 1: APPETIZERS -->
+          <div class="book-page active" data-page="0">
+            <div class="page-corner-br"></div><div class="page-corner-tr"></div><div class="page-corner-bl"></div>
+            <div class="page-header">
+              <h3 class="page-category">Appetizers</h3>
+              <p class="page-category-sub">To start your evening</p>
+            </div>
+            <div class="book-items">
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Potato Chips</div><div class="book-item-desc">Deep fried homemade paper thin potatoes with mustard and ketchup</div></div><span class="book-item-price">220</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Regular Fries</div><div class="book-item-desc">Thick baton cut skin-on potatoes</div></div><span class="book-item-price">210</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Cajun Fries</div><div class="book-item-desc">Thick baton cut fries sprinkled with Cajun seasoning</div></div><span class="book-item-price">220</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Lemon Pepper Onion Rings</div><div class="book-item-desc">Panko coated onion rings with garlic aioli</div></div><span class="book-item-price">270</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Sriracha Honey Wings</div><div class="book-item-desc">8pc &mdash; drenched in butter, garlic, sriracha and honey</div></div><span class="book-item-price">400</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Spicy Lemon Coke Wings</div><div class="book-item-desc">8pc &mdash; butter, cayenne pepper, lemon, coke, garlic and honey</div></div><span class="book-item-price">420</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Hoisin Butter Wings</div><div class="book-item-desc">8pc &mdash; hoisin sauce, butter, garlic and honey</div></div><span class="book-item-price">410</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Garlic Parmesan Wings</div><div class="book-item-desc">8pc &mdash; butter, garlic and parmesan</div></div><span class="book-item-price">400</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Chicken Fingers</div><div class="book-item-desc">Panko coated chicken tenders with spicy marinara sauce</div></div><span class="book-item-price">360</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Fish and Chips</div><div class="book-item-desc">Beer-battered Mahi-Mahi with potato fries and tartar sauce</div></div><span class="book-item-price">420</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Pigs in a Blanket</div><div class="book-item-desc">6 pcs mini breakfast sausages wrapped in bacon with honey mustard</div></div><span class="book-item-price">480</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Deconstructed Nachos</div><div class="book-item-desc">Tortilla chips, jalape&ntilde;os, black olives, taco beef, cheese sauce</div></div><span class="book-item-price">410</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Mushrooms Al Ajillo</div><div class="book-item-desc">Saut&eacute;ed mushrooms with oregano, chili flakes in garlic &amp; olive oil</div></div><span class="book-item-price">290</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Garlic Shrimps</div><div class="book-item-desc">Saut&eacute;ed with oregano, paprika, chili in garlic &amp; olive oil</div></div><span class="book-item-price">400</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Deep Fried Coconut Shrimps</div><div class="book-item-desc">Panko &amp; coconut coated with sweet &amp; spicy orange dip</div></div><span class="book-item-price">430</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Mozzarella Sticks</div><div class="book-item-desc">Panko coated cheese logs with spicy marinara</div></div><span class="book-item-price">410</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Butter Chicken Masala</div><div class="book-item-desc">Chicken breast in garam masala, cumin, cayenne, garlic, creamy tomato butter sauce</div></div><span class="book-item-price">390</span></div>
+            </div>
+          </div>
+
+          <!-- PAGE 2: SANDWICHES & BURGERS -->
+          <div class="book-page" data-page="1">
+            <div class="page-corner-br"></div><div class="page-corner-tr"></div><div class="page-corner-bl"></div>
+            <div class="page-header">
+              <h3 class="page-category">Sandwiches</h3>
+            </div>
+            <div class="book-items">
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Pastrami on Wheat</div><div class="book-item-desc">Pastrami, sauerkraut, emmental cheese, lettuce, tomato, mayo &amp; dijon on toasted wheat bread</div></div><span class="book-item-price">450</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">4 Cheese &amp; Caramelized Onions</div><div class="book-item-desc">Emmental, parmesan, mozzarella &amp; cheddar with caramelized onions on toasted wheat bread</div></div><span class="book-item-price">320</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Hot Chicken Sandwich</div><div class="book-item-desc">Corn flake crusted chicken, honey sriracha, cheddar, lettuce, tomato, dill pickle &amp; ranch on brioche</div></div><span class="book-item-price">350</span></div>
+            </div>
+
+            <div class="book-subsection">
+              <div class="page-header" style="margin-top: 8px;">
+                <h3 class="page-category">Burgers</h3>
+                <p class="page-category-sub">Australian beef on brioche bun</p>
+              </div>
+              <div class="book-items">
+                <div class="book-item"><div class="book-item-info"><div class="book-item-name">Classic Cheese Burger</div><div class="book-item-desc">Pickle, tomato, onion, lettuce &amp; melted cheddar</div></div><div class="book-item-prices"><div class="bp-col"><span class="bp-label">1/3 lb</span><span class="bp-val">350</span></div><div class="bp-col"><span class="bp-label">Sliders</span><span class="bp-val">390</span></div></div></div>
+                <div class="book-item"><div class="book-item-info"><div class="book-item-name">Blue Cheese Burger</div><div class="book-item-desc">Crumbled blue cheese, onion, lettuce &amp; tomato</div></div><div class="book-item-prices"><div class="bp-col"><span class="bp-label">1/3 lb</span><span class="bp-val">370</span></div><div class="bp-col"><span class="bp-label">Sliders</span><span class="bp-val">410</span></div></div></div>
+                <div class="book-item"><div class="book-item-info"><div class="book-item-name">Bacon Mushroom Melt</div><div class="book-item-desc">2 bacon strips, saut&eacute;ed mushrooms &amp; melted cheddar</div></div><div class="book-item-prices"><div class="bp-col"><span class="bp-label">1/3 lb</span><span class="bp-val">380</span></div><div class="bp-col"><span class="bp-label">Sliders</span><span class="bp-val">420</span></div></div></div>
+                <div class="book-item"><div class="book-item-info"><div class="book-item-name">K-Bomb</div><div class="book-item-desc">Bold kimchi slaw, gochujang mayo &mdash; smoky, spicy &amp; unforgettable</div></div><div class="book-item-prices"><div class="bp-col"><span class="bp-label">1/3 lb</span><span class="bp-val">410</span></div><div class="bp-col"><span class="bp-label">Sliders</span><span class="bp-val">450</span></div></div></div>
+                <div class="book-item"><div class="book-item-info"><div class="book-item-name">Lux Burger</div><div class="book-item-desc">Mushroom truffle aioli, Gruy&egrave;re, slow-caramelized onions, fresh lettuce</div></div><div class="book-item-prices"><div class="bp-col"><span class="bp-label">1/3 lb</span><span class="bp-val">510</span></div><div class="bp-col"><span class="bp-label">Sliders</span><span class="bp-val">560</span></div></div></div>
+                <div class="book-item"><div class="book-item-info"><div class="book-item-name">8 Ball Burger</div><div class="book-item-desc">2 bacon strips, caramelized onions, hickory smoked BBQ &amp; double melted cheese</div></div><span class="book-item-price">540</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PAGE 3: MAINS & SIDES -->
+          <div class="book-page" data-page="2">
+            <div class="page-corner-br"></div><div class="page-corner-tr"></div><div class="page-corner-bl"></div>
+            <div class="page-header">
+              <h3 class="page-category">Mains</h3>
+              <p class="page-category-sub">The heart of the table</p>
+            </div>
+            <div class="book-items">
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Chicken Parmigiana</div><div class="book-item-desc">Panko coated chicken breast, marinara, parmesan &amp; mozzarella with green salad</div></div><span class="book-item-price">450</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Curry Basil Mahi-Mahi</div><div class="book-item-desc">Pan seared with curry basil cream sauce, steamed rice, buttered beans &amp; carrots</div></div><span class="book-item-price">480</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Soy Pineapple Mahi-Mahi</div><div class="book-item-desc">Pan seared with soy pineapple sauce, grilled pineapple, mashed potato &amp; vegetables</div></div><span class="book-item-price">480</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Australian Ribeye Steak</div><div class="book-item-desc">Prime rib eye with herbed gravy, mashed potato &amp; buttered french beans</div></div><span class="book-item-price">820</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Salisbury Steak</div><div class="book-item-desc">Quarter pound beef patty, herbed gravy, mashed potato &amp; buttered vegetables</div></div><span class="book-item-price">450</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Creamy Garlic Chicken</div><div class="book-item-desc">Pan fried chicken, creamy garlic &amp; sundried tomato sauce, mashed potato &amp; vegetables</div></div><span class="book-item-price">370</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Sausage Platter</div><div class="book-item-desc">3 assorted grilled sausages with homemade potato chips, dijon mustard &amp; ketchup</div></div><span class="book-item-price">640</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Wagyu Chuck Eye Steak</div><div class="book-item-desc">Pure wagyu chuck eye, herbed gravy, mashed potato &amp; buttered french beans</div></div><span class="book-item-price">998</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Bratwurst Sauerkraut &amp; Mash</div><div class="book-item-desc">2 grilled German pork sausages, fried onions, sauerkraut &amp; mashed potato</div></div><span class="book-item-price">470</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">French Pork Chops</div><div class="book-item-desc">Grilled bone-in pork chop, Ardennaise white sauce, mashed potato &amp; vegetables</div></div><span class="book-item-price">520</span></div>
+            </div>
+
+            <div class="book-subsection">
+              <h4 class="book-subsection-title">Sauces &amp; Sides</h4>
+              <div class="book-sides-grid">
+                <div class="book-item"><div class="book-item-info"><div class="book-item-name">Mashed Potato</div></div><span class="book-item-price">90</span></div>
+                <div class="book-item"><div class="book-item-info"><div class="book-item-name">Buttered Vegetables</div></div><span class="book-item-price">70</span></div>
+                <div class="book-item"><div class="book-item-info"><div class="book-item-name">Steamed Rice</div></div><span class="book-item-price">50</span></div>
+                <div class="book-item"><div class="book-item-info"><div class="book-item-name">Marinara Sauce</div></div><span class="book-item-price">50</span></div>
+                <div class="book-item"><div class="book-item-info"><div class="book-item-name">Toasted Baguette</div></div><span class="book-item-price">50</span></div>
+                <div class="book-item"><div class="book-item-info"><div class="book-item-name">Cheese Sauce</div></div><span class="book-item-price">50</span></div>
+                <div class="book-item"><div class="book-item-info"><div class="book-item-name">Taco Beef</div></div><span class="book-item-price">50</span></div>
+                <div class="book-item"><div class="book-item-info"><div class="book-item-name">Pico de Gallo</div></div><span class="book-item-price">50</span></div>
+                <div class="book-item"><div class="book-item-info"><div class="book-item-name">Tartar Sauce</div></div><span class="book-item-price">50</span></div>
+                <div class="book-item"><div class="book-item-info"><div class="book-item-name">Herb Gravy</div></div><span class="book-item-price">50</span></div>
+                <div class="book-item"><div class="book-item-info"><div class="book-item-name">Fried Egg</div></div><span class="book-item-price">50</span></div>
+                <div class="book-item"><div class="book-item-info"><div class="book-item-name">PCR</div></div><span class="book-item-price">50</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PAGE 4: PASTA -->
+          <div class="book-page" data-page="3">
+            <div class="page-corner-br"></div><div class="page-corner-tr"></div><div class="page-corner-bl"></div>
+            <div class="page-header">
+              <h3 class="page-category">Pasta</h3>
+              <p class="page-category-sub">Handcrafted Italian tradition</p>
+            </div>
+            <div class="book-items">
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Spaghetti Putanesca</div><div class="book-item-desc">Tomato sauce with anchovies, garlic, fresh basil, chilli, capers &amp; olives</div></div><span class="book-item-price">300</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Cacio e Pepe</div><div class="book-item-desc">Classic Roman &mdash; emulsified parmesan cheese and black pepper</div></div><span class="book-item-price">300</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Truffle Cream &amp; Bacon Trivelle</div><div class="book-item-desc">Fusilli in creamy mushroom sauce with truffle oil and crispy bacon</div></div><span class="book-item-price">400</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Spaghetti Bolognese</div><div class="book-item-desc">Slow-cooked Australian beef, Italian sausage, bacon, celery, carrots &amp; sundried tomatoes</div></div><span class="book-item-price">390</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Grilled Chicken Pesto Penne</div><div class="book-item-desc">Penne in cashew, basil, garlic &amp; parmesan sauce with grilled chicken</div></div><span class="book-item-price">330</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Creamy Salmon &amp; Spinach</div><div class="book-item-desc">Spaghetti in cream sauce with salmon, spinach &amp; parmesan</div></div><span class="book-item-price">420</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Salmon Aglio Olio</div><div class="book-item-desc">Garlic &amp; olive oil with salmon, cherry tomatoes, capers &amp; black olives</div></div><span class="book-item-price">390</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Italian Sausage Arrabbiata</div><div class="book-item-desc">Penne in spicy tomato sauce with sliced Italian sausage &amp; parmesan</div></div><span class="book-item-price">400</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Shrimp Scampi Linguine</div><div class="book-item-desc">Shrimps in white wine, lemon, parsley, butter &amp; garlic with grated parmesan</div></div><span class="book-item-price">400</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Pasta Nero</div><div class="book-item-desc">Scallops in garlic &amp; olive oil, sundried tomatoes, artichoke, capers &amp; olives</div></div><span class="book-item-price">420</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Spaghetti Seafood Marinara</div><div class="book-item-desc">Shrimps, squid &amp; scallops in garlic &amp; crushed tomato sauce</div></div><span class="book-item-price">420</span></div>
+            </div>
+            <div class="book-subsection">
+              <h4 class="book-subsection-title">Pasta Platters</h4>
+              <p class="book-note">Serves 8&ndash;10 persons</p>
+              <div class="book-items">
+                <div class="book-item"><div class="book-item-info"><div class="book-item-name">Pasta Nero Seafood / Aglio Olio</div></div><span class="book-item-price">1,260</span></div>
+                <div class="book-item"><div class="book-item-info"><div class="book-item-name">Spaghetti Seafood Marinara</div></div><span class="book-item-price">1,250</span></div>
+                <div class="book-item"><div class="book-item-info"><div class="book-item-name">Creamy Salmon &amp; Spinach</div></div><span class="book-item-price">1,250</span></div>
+                <div class="book-item"><div class="book-item-info"><div class="book-item-name">Spaghetti Bolognese</div></div><span class="book-item-price">1,050</span></div>
+                <div class="book-item"><div class="book-item-info"><div class="book-item-name">Truffle Cream &amp; Bacon Trivelle</div></div><span class="book-item-price">1,050</span></div>
+                <div class="book-item"><div class="book-item-info"><div class="book-item-name">Salmon Aglio Olio</div></div><span class="book-item-price">1,050</span></div>
+                <div class="book-item"><div class="book-item-info"><div class="book-item-name">Grilled Chicken Pesto Penne</div></div><span class="book-item-price">950</span></div>
+                <div class="book-item"><div class="book-item-info"><div class="book-item-name">Spaghetti Putanesca</div></div><span class="book-item-price">950</span></div>
+                <div class="book-item"><div class="book-item-info"><div class="book-item-name">Cacio e Pepe</div></div><span class="book-item-price">950</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PAGE 5: PIZZA -->
+          <div class="book-page" data-page="4">
+            <div class="page-corner-br"></div><div class="page-corner-tr"></div><div class="page-corner-bl"></div>
+            <div class="page-header">
+              <h3 class="page-category">Pizza</h3>
+              <p class="page-category-sub">Stone-fired, hand-tossed perfection</p>
+            </div>
+            <div class="book-items">
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Margherita</div><div class="book-item-desc">Mozzarella, heirloom tomato, oregano, fresh basil</div></div><span class="book-item-price">400</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Margherita Al Crudo</div><div class="book-item-desc">Margherita with prosciutto crudo strips</div></div><span class="book-item-price">400</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Pizza Verde</div><div class="book-item-desc">Baby artichokes, green olives, fresh basil, sundried tomato, pesto</div></div><span class="book-item-price">480</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Quattro Formaggi</div><div class="book-item-desc">Mozzarella, parmigiano reggiano, Danish blue cheese, emmental</div></div><span class="book-item-price">520</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Salami Picante</div><div class="book-item-desc">Spicy salami (pepperoni), mozzarella, tomato sauce</div></div><span class="book-item-price">560</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Acciughe e Capperi</div><div class="book-item-desc">Anchovies, capers, oregano, cherry tomatoes, mozzarella</div></div><span class="book-item-price">480</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Basciola</div><div class="book-item-desc">Italian sausage, button mushrooms, mozzarella</div></div><span class="book-item-price">480</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Salmone e Pesto</div><div class="book-item-desc">Salmon, mozzarella, parmesan, pesto sauce</div></div><span class="book-item-price">600</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Frutti de Mare</div><div class="book-item-desc">Shrimp, squid, mussels, scallops, mozzarella, roasted garlic</div></div><span class="book-item-price">650</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Prosciutto e Tartufo</div><div class="book-item-desc">Prosciutto crudo, truffle oil, mushroom duxelles, b&eacute;chamel</div></div><span class="book-item-price">650</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Spinaci e Carciofi</div><div class="book-item-desc">Spinach, artichoke, lemon, bell pepper, b&eacute;chamel</div></div><span class="book-item-price">560</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Ortolana</div><div class="book-item-desc">Zucchini, eggplant, bell peppers, mozzarella</div></div><span class="book-item-price">560</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Capricciosa</div><div class="book-item-desc">Prosciutto crudo, champignons, olives, baby artichokes</div></div><span class="book-item-price">650</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Diavola</div><div class="book-item-desc">Salami picante, mozzarella, onions, olives, fresh basil, cherry tomato</div></div><span class="book-item-price">650</span></div>
+              <div class="book-item"><div class="book-item-info"><div class="book-item-name">Quattro Stagioni</div><div class="book-item-desc">4 seasons &mdash; margherita, salami picante, basciola &amp; acciughe e capperi</div></div><span class="book-item-price">650</span></div>
+            </div>
+          </div>
+
+        </div><!-- /book-inner -->
+      </div><!-- /book -->
+
+      <!-- Book navigation -->
+      <div class="book-nav" id="bookNav">
+        <button class="book-nav-btn" id="bookPrev" disabled aria-label="Previous page">&#8592;</button>
+        <div class="book-page-dots" id="bookDots"></div>
+        <button class="book-nav-btn" id="bookNext" aria-label="Next page">&#8594;</button>
+      </div>
+      <div class="book-page-label" id="bookLabel">Appetizers &mdash; Page 1 of 5</div>
+      <div class="book-swipe-hint" id="swipeHint">&#8592; Swipe or tap arrows to turn pages &#8594;</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer class="footer">
+  <img src="../330766587_1354976032008819_8324221903867436730_n.jpg" alt="8 Ball Tavern" class="footer-logo">
+  <p class="footer-tagline">Sports Lounge &bull; Bar &amp; Restaurant</p>
+  <div class="footer-links">
+    <a href="../">Home</a>
+    <a href="#">Menu</a>
+    <a href="../#reserve">Reserve</a>
+    <a href="../#visit">Visit</a>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">&copy; 2025 8 Ball Tavern. All Rights Reserved.</p>
+    <p class="footer-est">Est. 2023 &bull; Kalibo, Aklan</p>
+  </div>
+</footer>
+
+<!-- ─── BACK TO TOP ─── -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</button>
+
+<script>
+// ═══════════════════════════════════════════
+// NAVIGATION
+// ═══════════════════════════════════════════
+const navToggle = document.getElementById('navToggle');
+const navMenu = document.getElementById('navMenu');
+const backToTop = document.getElementById('backToTop');
+
+navToggle.addEventListener('click', () => {
+  navToggle.classList.toggle('active');
+  navMenu.classList.toggle('open');
+  document.body.style.overflow = navMenu.classList.contains('open') ? 'hidden' : '';
+});
+
+function closeMenu() {
+  navToggle.classList.remove('active');
+  navMenu.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Close mobile menu when clicking a link
+navMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', closeMenu);
+});
+
+// ═══════════════════════════════════════════
+// MENU BOOK
+// ═══════════════════════════════════════════
+const pages = document.querySelectorAll('.book-page');
+const bookPrev = document.getElementById('bookPrev');
+const bookNext = document.getElementById('bookNext');
+const bookDots = document.getElementById('bookDots');
+const bookLabel = document.getElementById('bookLabel');
+const swipeHint = document.getElementById('swipeHint');
+const totalPages = pages.length;
+let currentPage = 0;
+let isAnimating = false;
+
+const pageNames = ['Appetizers', 'Sandwiches & Burgers', 'Mains & Sides', 'Pasta', 'Pizza'];
+
+// Create dots
+for (let i = 0; i < totalPages; i++) {
+  const dot = document.createElement('button');
+  dot.className = 'book-dot' + (i === 0 ? ' active' : '');
+  dot.setAttribute('aria-label', 'Go to ' + pageNames[i]);
+  dot.addEventListener('click', () => goToPage(i));
+  bookDots.appendChild(dot);
+}
+
+function updateBookUI() {
+  bookPrev.disabled = currentPage === 0;
+  bookNext.disabled = currentPage === totalPages - 1;
+  const dots = bookDots.querySelectorAll('.book-dot');
+  dots.forEach((d, i) => d.classList.toggle('active', i === currentPage));
+  bookLabel.innerHTML = pageNames[currentPage] + ' &mdash; Page ' + (currentPage + 1) + ' of ' + totalPages;
+}
+
+function goToPage(target) {
+  if (target === currentPage || isAnimating || target < 0 || target >= totalPages) return;
+  isAnimating = true;
+
+  const direction = target > currentPage ? 'right' : 'left';
+  const oldPage = pages[currentPage];
+  const newPage = pages[target];
+
+  // Hide swipe hint after first interaction
+  swipeHint.style.display = 'none';
+
+  // Exit old page
+  oldPage.classList.remove('active');
+  oldPage.classList.add(direction === 'right' ? 'exit-left' : 'exit-right');
+
+  // Enter new page
+  newPage.classList.add('active');
+  newPage.scrollTop = 0;
+
+  currentPage = target;
+  updateBookUI();
+
+  setTimeout(() => {
+    oldPage.classList.remove('exit-left', 'exit-right');
+    isAnimating = false;
+  }, 600);
+}
+
+bookPrev.addEventListener('click', () => goToPage(currentPage - 1));
+bookNext.addEventListener('click', () => goToPage(currentPage + 1));
+
+// Touch/swipe support
+let touchStartX = 0;
+let touchStartY = 0;
+const bookEl = document.getElementById('menuBook');
+
+bookEl.addEventListener('touchstart', (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+  touchStartY = e.changedTouches[0].screenY;
+}, { passive: true });
+
+bookEl.addEventListener('touchend', (e) => {
+  const dx = e.changedTouches[0].screenX - touchStartX;
+  const dy = e.changedTouches[0].screenY - touchStartY;
+  // Only trigger if horizontal swipe is dominant and significant
+  if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+    if (dx < 0) goToPage(currentPage + 1);
+    else goToPage(currentPage - 1);
+  }
+}, { passive: true });
+
+// Keyboard support
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft') goToPage(currentPage - 1);
+  if (e.key === 'ArrowRight') goToPage(currentPage + 1);
+});
+
+// ═══════════════════════════════════════════
+// SCROLL REVEAL
+// ═══════════════════════════════════════════
+const reveals = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+reveals.forEach(el => revealObserver.observe(el));
+
+// Back to top
+window.addEventListener('scroll', () => {
+  backToTop.classList.toggle('visible', window.scrollY > 300);
+});
+
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', (e) => {
+    const href = anchor.getAttribute('href');
+    if (href === '#') return;
+    const target = document.querySelector(href);
+    if (target) {
+      e.preventDefault();
+      const offset = 72;
+      const y = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+</body>
+</html>
