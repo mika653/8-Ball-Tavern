@@ -58,7 +58,6 @@ const scope = [
     items: [
       "Brand-aligned design system (colours, typography, components)",
       "Full responsive UI for desktop, tablet, mobile",
-      "On-site food, cocktails & ambience photo art direction",
       "AI feature interfaces",
     ],
   },
