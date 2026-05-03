@@ -86,6 +86,7 @@ export default function Concept1() {
           </Link>
           <nav className="hidden md:flex items-center gap-8 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#D4C9B8]/70">
             <a href="#about" className="hover:text-[#C4935A]">Tavern</a>
+            <Link href="/menu" className="hover:text-[#C4935A]">Menu</Link>
             <a href="#promos" className="hover:text-[#C4935A]">Promos</a>
             <a href="#cocktails" className="hover:text-[#C4935A]">Cocktails</a>
             <a href="#reserve" className="hover:text-[#C4935A]">Reserve</a>
@@ -130,12 +131,12 @@ export default function Concept1() {
               >
                 Reserve a table <ArrowRight size={16} />
               </a>
-              <a
-                href="#cocktails"
+              <Link
+                href="/menu"
                 className="inline-flex items-center gap-2 border border-[#C4935A]/40 hover:border-[#C4935A] text-[#C4935A] px-6 py-3.5 text-sm font-bold uppercase tracking-[0.18em] transition-colors"
               >
                 See the menu
-              </a>
+              </Link>
             </div>
             <div className="grid grid-cols-3 gap-6 pt-8 border-t border-[#C4935A]/10 max-w-md">
               <div>

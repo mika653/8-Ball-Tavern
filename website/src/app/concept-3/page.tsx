@@ -94,6 +94,7 @@ export default function Concept3() {
             <a href="#tonight" className="hover:text-[#1A1A14]">Tonight</a>
             <a href="#planner" className="hover:text-[#1A1A14]">Plan a Night</a>
             <a href="#kitchen" className="hover:text-[#1A1A14]">Kitchen</a>
+            <Link href="/menu" className="hover:text-[#1A1A14]">Full Menu</Link>
             <a href="#visit" className="hover:text-[#1A1A14]">Visit</a>
           </nav>
           <Link href="/" className="text-xs text-[#3D3528]/50 hover:text-[#1A1A14] flex items-center gap-1.5">

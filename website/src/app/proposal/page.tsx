@@ -9,7 +9,6 @@ import {
   Check,
   Minus,
   Wine,
-  Globe,
   Megaphone,
   TrendingUp,
   PenTool,
@@ -980,14 +979,6 @@ export default function ProposalPage() {
               className="inline-flex items-center gap-2 bg-[#C4935A] hover:bg-[#8A6838] transition-colors text-white px-5 py-3 rounded-lg text-sm font-semibold"
             >
               <Calendar size={16} /> Book a 30-min walkthrough
-            </a>
-            <a
-              href="https://8balltavern.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border border-white/20 hover:border-white text-white transition-colors px-5 py-3 rounded-lg text-sm font-semibold"
-            >
-              <Globe size={16} /> Compare to current site
             </a>
           </div>
         </div>
