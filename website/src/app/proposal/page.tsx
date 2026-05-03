@@ -608,8 +608,8 @@ export default function ProposalPage() {
               }`}
             >
               {t.highlight && (
-                <div className="absolute -top-3 left-6 bg-[#C4935A] text-white text-[10px] font-bold uppercase tracking-[0.18em] px-3 py-1 rounded-full z-10">
-                  Recommended
+                <div className="bg-[#C4935A] text-white text-[10px] font-bold uppercase tracking-[0.22em] px-3 py-2 text-center">
+                  ★ Recommended
                 </div>
               )}
               <div className="p-6 sm:p-7 flex flex-col flex-1">
@@ -717,12 +717,12 @@ export default function ProposalPage() {
                   <div
                     key={t.name}
                     className={`p-4 sm:p-5 text-center border-l border-neutral-200 ${
-                      t.highlight ? "bg-[#C4935A]/8 relative" : ""
+                      t.highlight ? "bg-[#C4935A]/8" : ""
                     }`}
                   >
                     {t.highlight && (
-                      <div className="absolute -top-px left-1/2 -translate-x-1/2 -translate-y-full mt-px bg-[#C4935A] text-white text-[9px] font-bold uppercase tracking-[0.18em] px-2.5 py-0.5 rounded-b">
-                        Recommended
+                      <div className="inline-block bg-[#C4935A] text-white text-[9px] font-bold uppercase tracking-[0.16em] px-2 py-0.5 rounded mb-2">
+                        ★ Recommended
                       </div>
                     )}
                     <div
@@ -956,7 +956,7 @@ export default function ProposalPage() {
           <div className="grid sm:grid-cols-3 gap-3 mb-8">
             {[
               { href: "/concept-1", label: "Concept 1", sub: "Classic Pub Heritage" },
-              { href: "/concept-2", label: "Concept 2", sub: "Neon Game Night" },
+              { href: "/concept-2", label: "Concept 2", sub: "The Original" },
               { href: "/concept-3", label: "Concept 3", sub: "Modern Sports Lounge" },
             ].map((c) => (
               <Link

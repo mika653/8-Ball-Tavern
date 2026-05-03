@@ -14,7 +14,7 @@ import {
 const tabs = [
   { slug: "proposal", label: "Proposal", icon: <FileText size={15} />, accent: "#0D0D0D" },
   { slug: "concept-1", label: "Concept 1 — Classic Pub Heritage", icon: <Layers size={15} />, accent: "#C4935A" },
-  { slug: "concept-2", label: "Concept 2 — Neon Game Night", icon: <Zap size={15} />, accent: "#FF2EAA" },
+  { slug: "concept-2", label: "Concept 2 — The Original", icon: <Zap size={15} />, accent: "#C4935A" },
   { slug: "concept-3", label: "Concept 3 — Modern Sports Lounge", icon: <Sparkles size={15} />, accent: "#7C5E3A" },
 ];
 
