@@ -22,13 +22,13 @@ import {
 export const metadata: Metadata = {
   title: "8 Ball Tavern — Website Proposal",
   description:
-    "Proposed scope, AI integrations, timeline, and investment tiers for the new 8 Ball Tavern website.",
+    "Proposed scope, smart features, timeline, and investment tiers for the new 8 Ball Tavern website.",
 };
 
 const aiFeatures = [
   {
     icon: <CalendarCheck size={20} />,
-    name: "AI Reservation Concierge",
+    name: "Smart Reservation Concierge",
     summary:
       "Guests describe their plan — \"date night for 2\" or \"barkada for the UFC fight\" — and the concierge picks the right table (booth, bar-side, billiards-view) and confirms via WhatsApp in seconds.",
     impact:
@@ -36,7 +36,7 @@ const aiFeatures = [
   },
   {
     icon: <Wine size={20} />,
-    name: "AI Drink Pairing Bartender",
+    name: "Smart Drink Pairing",
     summary:
       "Diners pick a dish and the bartender suggests a cocktail, beer, or sangria pitcher to match — with a one-tap add to their reservation note.",
     impact:
@@ -44,7 +44,7 @@ const aiFeatures = [
   },
   {
     icon: <PartyPopper size={20} />,
-    name: "AI Game Night Planner",
+    name: "Smart Game Night Planner",
     summary:
       "Builds a full evening: live sports schedule, recommended billiards block, group meal package, and a sangria pitcher — bundled into a single bookable plan.",
     impact:
@@ -58,7 +58,7 @@ const scope = [
     items: [
       "Brand-aligned design system (colours, typography, components)",
       "Full responsive UI for desktop, tablet, mobile",
-      "AI feature interfaces",
+      "Smart feature interfaces",
     ],
   },
   {
@@ -66,7 +66,7 @@ const scope = [
     items: [
       "Next.js + Tailwind for performance",
       "CMS so your team can update menu, promos, and events without us",
-      "AI integrations wired to OpenAI / Claude APIs",
+      "Smart features built with custom logic — no API subscriptions or ongoing usage costs",
       "SEO, schema markup, sitemaps, analytics",
     ],
   },
@@ -116,7 +116,7 @@ const timeline = [
   },
   {
     week: "Week 2+",
-    phase: "AI features layered in",
+    phase: "Smart features layered in",
     deliverable:
       "Optional — Reservation Concierge, Drink Pairing, or Game Night Planner added live (Growth & Premium tiers)",
   },
@@ -186,7 +186,7 @@ const comparison: CompareGroup[] = [
   {
     group: "Smart layers",
     rows: [
-      { label: "AI integrations", foundation: false, growth: "1 feature", premium: "2 features" },
+      { label: "Smart features", foundation: false, growth: "1 feature", premium: "2 features" },
       { label: "CMS for self-editing", foundation: false, growth: true, premium: true },
     ],
   },
@@ -239,7 +239,7 @@ const tiers = [
     bullets: [
       "Everything in Foundation, plus:",
       "Up to 8 pages with light custom polish",
-      "1 AI feature of your choice — Reservation Concierge, Drink Pairing, or Game Night Planner",
+      "1 smart feature of your choice — Reservation Concierge, Drink Pairing, or Game Night Planner",
       "Simple CMS so your team can edit content",
       "Google Maps + analytics tracking",
       "2 menu / page updates per month (specials, prices, events)",
@@ -259,7 +259,7 @@ const tiers = [
     bullets: [
       "Everything in Growth, plus:",
       "Up to 10 pages with custom design system",
-      "2 AI features of your choice (from Reservation Concierge, Drink Pairing, Game Night Planner)",
+      "2 smart features of your choice (from Reservation Concierge, Drink Pairing, Game Night Planner)",
       "Sports schedule + events template",
       "Signature cocktail / dish spotlight section",
       "4 menu / page updates per month",
@@ -336,7 +336,7 @@ export default function ProposalPage() {
             </div>
             <div>
               <div className="text-white/50 text-xs uppercase tracking-wider mb-1">
-                AI features
+                Smart features
               </div>
               <div className="font-semibold text-white">Up to 2</div>
             </div>
@@ -381,7 +381,7 @@ export default function ProposalPage() {
             <p className="text-[#0D0D0D]/70 text-base">
               Discovery and onboarding (1–3 days of brand assets, photos, and
               menu info) happen <em>before</em> the 7-day clock starts, so the
-              build phase stays focused. AI features in Growth and Premium tiers
+              build phase stays focused. Smart features in Growth and Premium tiers
               are layered in{" "}
               <strong className="text-[#0D0D0D]">after launch</strong> — the
               site is already live and earning while we add the smart layers on
@@ -409,8 +409,8 @@ export default function ProposalPage() {
               body: "Big-game nights, anniversaries, barkada birthdays — they shouldn't require a Messenger ping. The new site books, confirms, and remembers.",
             },
             {
-              title: "AI changes the playing field.",
-              body: "Most PH bars haven't moved on AI yet. A 12-month head start in Aklan is a real competitive moat — especially for tourist season.",
+              title: "Smart automation changes the playing field.",
+              body: "Most PH bars still rely on Messenger and phone calls. Smart booking and ordering tools give you a 12-month head start in Aklan — a real competitive moat, especially for tourist season.",
             },
             {
               title: "Your tavern has the story.",
@@ -435,17 +435,17 @@ export default function ProposalPage() {
         </div>
       </section>
 
-      {/* AI Features */}
+      {/* Smart Features */}
       <section className="bg-neutral-50 border-y border-neutral-200">
         <div className="max-w-5xl mx-auto px-6 py-16 sm:py-20">
           <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#C4935A] mb-3">
-            02 &mdash; AI Integrations
+            02 &mdash; Smart Features
           </div>
           <h2
             className="text-3xl sm:text-4xl font-bold tracking-tight mb-4"
             style={{ fontFamily: "var(--font-cinzel-decorative, serif)" }}
           >
-            Three AI features designed for the tavern guest.
+            Three smart features designed for the tavern guest.
           </h2>
           <p className="text-neutral-600 text-lg max-w-3xl mb-10 leading-relaxed">
             Each one solves a real friction point in the guest journey — and
@@ -943,8 +943,8 @@ export default function ProposalPage() {
             See three directions, side-by-side.
           </h3>
           <p className="text-white/80 leading-relaxed mb-6 max-w-3xl">
-            We built three concept directions, each leading with a different AI
-            feature so you can see how the brand could feel in different
+            We built three concept directions, each leading with a different
+            smart feature so you can see how the brand could feel in different
             worlds. Open each and switch between mobile, tablet, and desktop
             views to compare.
           </p>

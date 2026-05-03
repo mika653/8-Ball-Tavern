@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "8 Ball Tavern — Website Proposal & Concepts",
     description:
-      "Proposal and three AI-integrated website concepts for 8 Ball Tavern.",
+      "Proposal and three website concepts with smart features for 8 Ball Tavern.",
     type: "website",
   },
 };

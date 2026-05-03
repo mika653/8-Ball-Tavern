@@ -174,7 +174,7 @@ export default function Concept1() {
                 </div>
                 <div>
                   <div className="text-[10px] uppercase tracking-[0.2em] text-[#C4935A] font-bold">
-                    AI Reservation Concierge
+                    Smart Reservation Concierge
                   </div>
                   <div className="text-sm font-bold text-[#F0E6D3]" style={{ fontFamily: "var(--font-cinzel, serif)" }}>
                     Book your perfect table
@@ -449,11 +449,11 @@ export default function Concept1() {
         </div>
       </section>
 
-      {/* AI capabilities strip */}
+      {/* Smart features strip */}
       <section className="border-b border-[#C4935A]/10 bg-gradient-to-br from-[#C4935A]/8 via-transparent to-transparent">
         <div className="max-w-6xl mx-auto px-6 py-20">
           <div className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#C4935A] mb-3">
-            Powered by AI
+            Smart features
           </div>
           <h2
             className="text-4xl sm:text-5xl font-normal tracking-tight mb-12 max-w-3xl"

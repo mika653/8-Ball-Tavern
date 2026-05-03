@@ -211,7 +211,7 @@ export default function Concept3() {
         </div>
       </section>
 
-      {/* AI Game Night Planner */}
+      {/* Smart Game Night Planner */}
       <section
         id="planner"
         className="border-b border-[#1A1A14]/10 bg-gradient-to-br from-[#F0EADC] via-[#F8F4ED] to-[#F0EADC]"
@@ -220,7 +220,7 @@ export default function Concept3() {
           <div className="grid md:grid-cols-12 gap-10 mb-12">
             <div className="md:col-span-7">
               <div className="text-[10px] font-bold uppercase tracking-[0.32em] text-[#7C5E3A] mb-3 flex items-center gap-2">
-                <Sparkles size={13} /> AI Game Night Planner · New
+                <Sparkles size={13} /> Smart Game Night Planner · New
               </div>
               <h2
                 className="text-5xl sm:text-6xl font-bold tracking-tight leading-[0.98]"
