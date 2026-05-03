@@ -4,7 +4,6 @@ import {
   ArrowLeft,
   ArrowUpRight,
   CalendarCheck,
-  Eye,
   Calendar,
   CheckCircle2,
   Check,
@@ -17,6 +16,7 @@ import {
   Palette,
   Package,
   PartyPopper,
+  LayoutDashboard,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -53,15 +53,6 @@ const aiFeatures = [
 ];
 
 const scope = [
-  {
-    title: "Strategy & Discovery",
-    items: [
-      "Stakeholder interviews with you and the floor team",
-      "Guest-persona mapping (date nights, barkadas, sports crowd, hotel walk-ins)",
-      "Competitive scan of Kalibo + Boracay nightlife scene",
-      "Sitemap, content map, and reservation conversion flow",
-    ],
-  },
   {
     title: "Design",
     items: [
@@ -133,6 +124,13 @@ const timeline = [
 ];
 
 const addOns = [
+  {
+    icon: <LayoutDashboard size={20} />,
+    name: "CMS Setup",
+    price: "₱2,500",
+    unit: "/one-time",
+    body: "Simple admin panel so your team can update menu items, prices, promos, and event posts without us. Already included in Growth and Premium — add this to Foundation if you want self-edit capability without committing to a monthly retainer.",
+  },
   {
     icon: <Megaphone size={20} />,
     name: "Social Media Management",
@@ -502,7 +500,7 @@ export default function ProposalPage() {
         >
           What we&rsquo;ll deliver
         </h2>
-        <div className="grid sm:grid-cols-2 gap-5">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
           {scope.map((s) => (
             <div
               key={s.title}
@@ -864,11 +862,9 @@ export default function ProposalPage() {
             Layer in extra firepower.
           </h2>
           <p className="text-neutral-600 text-lg max-w-3xl mb-3 leading-relaxed">
-            Available exclusively to{" "}
-            <strong className="text-neutral-900">Growth</strong> and{" "}
-            <strong className="text-neutral-900">Premium</strong> subscribers.
-            Billed monthly alongside the retainer; cancellable with 15 days
-            written notice.
+            Available across all tiers. Monthly services are billed alongside
+            any retainer (cancellable with 15 days written notice); one-time
+            services are billed at setup.
           </p>
           <p className="text-sm text-neutral-500 italic mb-10">
             Mix and match — pick any combination below.
@@ -926,7 +922,7 @@ export default function ProposalPage() {
                 className="font-bold text-lg sm:text-xl mb-1"
                 style={{ fontFamily: "var(--font-cinzel, serif)" }}
               >
-                Bundle the first three monthly services for ₱6,500/month.
+                Bundle the three monthly marketing services for ₱6,500/month.
               </div>
               <p className="text-sm text-white/80 leading-relaxed">
                 That&rsquo;s Social Media Management + AI-Powered SEO + Blog
